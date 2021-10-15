@@ -406,7 +406,7 @@ _main() {
 			echo
 		fi        
         mysqld &
-        xmysql -h localhost -u $DATABASE_USER -p $DATABASE_PASSWORD -d $DATABASE_NAME -r 0.0.0.0
+        xmysql -h localhost -u root -p $MYSQL_ROOT_PASSWORD -d $DATABASE_NAME -r 0.0.0.0
 	fi
 	exec "$@"
 }

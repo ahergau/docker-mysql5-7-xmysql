@@ -29,10 +29,11 @@ COPY ./docker-entrypoint.sh /entrypoint.sh
 
 # set root password
 ENV MYSQL_ROOT_PASSWORD=root
-# set xmysql parameters
-ENV DATABASE_USER=root
-ENV DATABASE_PASSWORD=root
-ENV DATABASE_NAME=sandbox
+ENV MYSQL_PASSWORD=root
+ENV MYSQL_DATABASE=sample
+
+# xmysql
+ENV DATABASE_NAME=sample
 
 # Install xmysql 
 RUN apt update && \

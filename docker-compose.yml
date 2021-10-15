@@ -7,17 +7,14 @@ services:
     container_name: MySQL5.7_XMYSQL    
     environment:
       MYSQL_ROOT_PASSWORD: 'root'      
-      MYSQL_PASSWORD: 'root'
-      MYSQL_DATABASE: 'sandbox'  
+      MYSQL_DATABASE: 'sample'  
       # xmysql variables    
-      DATABASE_USER: 'root'
-      DATABASE_PASSWORD: 'root'
-      DATABASE_NAME: 'gaurav'
+      DATABASE_NAME: 'sample' # Mention the db name for which xmysql APIs are required
     volumes:
       - ./mysql/data/db:/var/lib/mysql      
     ports:
-      - "3306:3306"
-      - "3000:3000"
+      - "3306:3306" # Mysql
+      - "3000:3000" # xmysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
